@@ -37,3 +37,13 @@ A module that only sends notifications. It never blocks, locks or limits anythin
 - **Ledger:** plain credits, append-only and SHA-256 hash-chained, so any edit or deletion is detectable. It isn't secret or signed, so it shows tampering but doesn't prevent it.
 - **Studies:** you opt in per study and can revoke, which stops earning and removes your data. Aggregates are only shown when k≥5 users, and users appear only under pseudonyms.
 - **Crypto export:** off by default and only a future idea. Crypto is volatile and full of scams.
+
+## Conflict-of-interest firewall (`coi_firewall.py`)
+Uses the consent, k≥5 and hash-chained ledger pieces from `data_credit_ledger`.
+- **Blind fund:** funders deposit money into a shared pool. Only the independent board assigns researchers. The code enforces that funders can't pick a researcher, act as one, see results early or access raw data; any attempt raises an error.
+- **Pre-registration:** hypotheses and metrics are hashed, timestamped and locked before anyone can access the data. Results on metrics that weren't pre-registered are flagged as exploratory.
+- **Publishing:** every result, including null and negative ones, is auto-published when its embargo expires (180 days by default). Each result carries a funding disclosure.
+- **Open data:** anonymized aggregates are open for reanalysis, but only once at least 5 users contribute (k≥5). Users opt in per study and can withdraw, which removes their data.
+- **Banned uses:** marketing, targeting heavy users, rewards tied to consuming more, and nicotine data from anyone under 21 are all rejected and logged.
+- **Audit log:** a hash-chained log shows tampering.
+- **Limitations:** the rules are enforced only inside this code, while real independence needs legal and governance backing. Days are counted as integers. A board member could still collude with a funder, and a funder could fund through someone else.
