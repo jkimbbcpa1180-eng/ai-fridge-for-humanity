@@ -1,0 +1,18 @@
+switch OFF -> switch OFF
+WATCH: low cartridges ['electrolytes']
+WATCH act -> switch watch: AI cannot act
+shift plan: boost 02:30, cutoff 06:00, bed 13:00
+02:30 boost drink: caffeine 160 mg
+whey -> allergen lockout {'milk'}
+gaps: ['protein_g', 'fiber_g', 'electrolytes', 'vitamin_d']; flags: ['Out of typical range: see a doctor. Dose NOT increased.']
+11:00 post-route drink made; electrolytes level now 0.14
+09:00 more caffeine allowed? False
+bedtime residual 37 mg (GUESS range 14-57)
+cutoff learned: 8.0 h before bed
+kid caffeine -> caffeine_mg would reach 40 > cap 0
+over-cap -> caffeine_mg would reach 440 > cap 400
+set_temp -> token lacks set_temp on fridge-1
+study aggregate: {'n': 6, 'mean': 6.25}; u0 credits 10
+after 2 revoke: {'suppressed': True, 'reason': 'n<5 (k-anonymity)'}
+revoked token -> invalid or revoked token
+log entries: 7; anti-greed: subscription_required=False
